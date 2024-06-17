@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Button Example with Stars</title>
+<style>
+  body {
+    background-color: #2c3e50; /* Dark blue background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ecf0f1; /* Light gray text color */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+  }
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+  .star {
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 5px white;
+    animation: twinkle 2s infinite ease-in-out;
+  }
+  .star:nth-child(2n) {
+    animation-duration: 3s;
+  }
+  .star:nth-child(3n) {
+    animation-duration: 4s;
+  }
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  .button-container {
+    position: relative;
+    z-index: 10; /* Ensure the button is above the stars */
+  }
+  button {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    background: linear-gradient(90deg, #ff8c00, #ff0080); /* Gradient background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+  }
+  button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.75s;
+  }
+  button:hover::before {
+    width: 0;
+    height: 0;
+  }
+  button:hover {
+    background: linear-gradient(90deg, #ff0080, #ff8c00); /* Reverse gradient on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+
+  /* Solar system animation */
+  .sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px; /* Sun size */
+    height: 100px;
+    background: yellow;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+    animation: rotateSun 20s linear infinite;
+  }
+
+  .planet {
+    position: absolute;
+    width: 20px; /* Planet size */
+    height: 20px;
+    border-radius: 50%;
+    animation-duration: 8s; /* Orbit period */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .mercury {
+    background-color: #d9d9d9; /* Gray */
+    animation: orbitPlanet 8s linear infinite;
+  }
+
+  .venus {
+    background-color: #f1c40f; /* Yellow */
+    animation: orbitPlanet 12s linear infinite;
+  }
+
+  .earth {
+    background-color: #3498db; /* Blue */
+    animation: orbitPlanet 16s linear infinite;
+  }
+
+  .mars {
+    background-color: #e74c3c; /* Red */
+    animation: orbitPlanet 20s linear infinite;
+  }
+
+  .jupiter {
+    background-color: #f39c12; /* Orange */
+    animation: orbitPlanet 24s linear infinite;
+  }
+
+  .saturn {
+    background-color: #f39c12; /* Orange */
+    animation: orbitPlanet 28s linear infinite;
+  }
+
+  .uranus {
+    background-color: #3498db; /* Blue */
+    animation: orbitPlanet 32s linear infinite;
+  }
+
+  .neptune {
+    background-color: #2980b9; /* Dark blue */
+    animation: orbitPlanet 36s linear infinite;
+  }
+
+  @keyframes rotateSun {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes orbitPlanet {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars">
+  <div class="sun"></div>
+  <div class="planet mercury" style="top: 20%; left: 50%;"></div>
+  <div class="planet venus" style="top: 50%; left: 20%;"></div>
+  <div class="planet earth" style="top: 50%; left: 80%;"></div>
+  <div class="planet mars" style="top: 80%; left: 50%;"></div>
+  <div class="planet jupiter" style="top: 10%; left: 10%;"></div>
+  <div class="planet saturn" style="top: 15%; left: 85%;"></div>
+  <div class="planet uranus" style="top: 85%; left: 15%;"></div>
+  <div class="planet neptune" style="top: 40%; left: 25%;"></div>
+</div>
+
+<div class="button-container">
+  <button onclick="window.location.href = 'https://partyrock.aws/u/poonamkuldeep/Vj3rIv2DV/English-Grammar-Mastery';">Click Me</button>
+</div>
+
+</body>
+</html>
